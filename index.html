@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Netflix</title>
+    <link rel="stylesheet" href="home_page.css">
+    <script src="script2.js" defer></script>
+</head>
+<body>
+
+    
+    <!-- Navbar -->
+    <div class="nav">
+        <div class="nav_left">
+            <a href="index.html">
+                <img class="nav_logo" src="netflix-5947489_960_720.webp" alt="Netflix Logo">
+            </a>
+        </div>
+        <div class="nav_right">
+            <img src="download (1).png" class="nav_avatar" alt="User Avatar">
+            <button id="loginBtn" class="nav_button">Login</button>
+            <button id="signUpBtn" class="nav_button">Sign Up</button>
+        </div>
+    </div>
+
+    <!-- Banner Section -->
+    <header id="banner">
+        <div id="banner_contents">
+            <h1 id="banner_title">Movie Title</h1>
+            <div id="banner_buttons">
+                <button class="banner_button">Play</button>
+                <button class="banner_button">My List</button>
+            </div>
+            <p id="banner_description">Movie Description Goes Here.</p>
+        </div>
+        <div id="banner_fadebottom"></div>
+    </header>
+
+    <!-- Row of Posters (Content) -->
+    <div id="headrow">
+        <div class="row">
+            <h2 class="row_title">Trending Now</h2>
+            <div class="row_posters"></div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span id="closeLogin" class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="email" placeholder="Email" required><br>
+                <input type="password" placeholder="Password" required><br>
+                <button type="submit" class="submit-btn">Login</button>
+                <p>Don't have an account? <a href="#" id="toSignUp">Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signUpModal" class="modal">
+        <div class="modal-content">
+            <span id="closeSignUp" class="close">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signUpForm">
+                <input type="email" placeholder="Email" required><br>
+                <input type="password" placeholder="Password" required><br>
+                <input type="password" placeholder="Confirm Password" required><br>
+                <button type="submit" class="submit-btn">Sign Up</button>
+                <p>Already have an account? <a href="#" id="toLogin">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality
+        var loginBtn = document.getElementById("loginBtn");
+        var signUpBtn = document.getElementById("signUpBtn");
+        var loginModal = document.getElementById("loginModal");
+        var signUpModal = document.getElementById("signUpModal");
+        var closeLogin = document.getElementById("closeLogin");
+        var closeSignUp = document.getElementById("closeSignUp");
+        var toSignUp = document.getElementById("toSignUp");
+        var toLogin = document.getElementById("toLogin");
+
+        // Open Login Modal
+        loginBtn.onclick = function() {
+            loginModal.style.display = "block";
+        }
+
+        // Open Sign Up Modal
+        signUpBtn.onclick = function() {
+            signUpModal.style.display = "block";
+        }
+
+        // Close Login Modal
+        closeLogin.onclick = function() {
+            loginModal.style.display = "none";
+        }
+
+        // Close Sign Up Modal
+        closeSignUp.onclick = function() {
+            signUpModal.style.display = "none";
+        }
+
+        // Navigate to Sign Up Modal
+        toSignUp.onclick = function() {
+            loginModal.style.display = "none";
+            signUpModal.style.display = "block";
+        }
+
+        // Navigate to Login Modal
+        toLogin.onclick = function() {
+            signUpModal.style.display = "none";
+            loginModal.style.display = "block";
+        }
+
+        // Close modal if clicked outside
+        window.onclick = function(event) {
+            if (event.target == loginModal || event.target == signUpModal) {
+                loginModal.style.display = "none";
+                signUpModal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
