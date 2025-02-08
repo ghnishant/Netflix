@@ -1,0 +1,261 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #111;
+    color: white;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}
+
+.nav_left img {
+    width: 150px;
+}
+
+.nav_right {
+    display: flex;
+    align-items: center;
+}
+
+.nav_avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.nav_button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-right: 10px;
+}
+
+.nav_button:hover {
+    background-color: #b50909;
+}
+
+/* Hide login and signup initially */
+#loginModal, #signUpModal {
+    display: none;
+}
+
+/* Banner */
+#banner {
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 50px;
+}
+
+#banner_contents {
+    max-width: 500px;
+}
+
+#banner_title {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+#banner_description {
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 360px;
+    margin-top: 10px;
+}
+
+.banner_button {
+    background-color: rgba(51, 51, 51, 0.5);
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.banner_button:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Row of Posters */
+.row {
+    margin: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    scrollbar-width: thin;
+    -ms-overflow-style: none;
+    position: relative;
+}
+
+.row::-webkit-scrollbar {
+    height: 5px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.row::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+}
+
+.row_posters {
+    display: flex;
+    transition: transform 0.3s;
+    white-space: nowrap;
+}
+
+.row_poster {
+    object-fit: contain;
+    max-height: 120px;
+    margin-right: 10px;
+    transition: transform 0.5s;
+}
+
+.row_poster:hover {
+    transform: scale(1.1);
+}
+
+/* Large Banners except Trending Now */
+.row_large {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Fade Effect */
+.row_fade {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    background: linear-gradient(to right, rgba(17, 17, 17, 1), rgba(17, 17, 17, 0));
+}
+
+.row_fade_left {
+    left: 0;
+}
+
+.row_fade_right {
+    right: 0;
+}
+
+/* Fade effect for Netflix Originals and Top Rated */
+.row_netflix_originals,
+.row_top_rated {
+    position: relative;
+    height: 200px;
+}
+
+.row_netflix_originals::after,
+.row_top_rated::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    background: linear-gradient(to right, rgba(17, 17, 17, 0), rgba(17, 17, 17, 1));
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+#loginModal .modal-content {
+    height: auto;
+}
+
+#signUpModal .modal-content input {
+    display: block;
+    width: calc(100% - 20px);
+    margin: 10px auto;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+}
+
+.modal-content input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #b50909;
+}
+
+.close {
+    color: white;
+    font-size: 24px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+}
